@@ -14,4 +14,10 @@ bot = discord.Bot(intents=bot_intents)
 async def on_ready():
     print(f'{bot.user} launched! 🚀')
 
+
+@bot.event
+async def on_message(message):
+    if message.content == ('!bot'):
+        await message.channel.send(bot.user)
+
 bot.run(os.getenv('TOKEN'))
