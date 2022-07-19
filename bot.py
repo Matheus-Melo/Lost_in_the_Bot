@@ -2,6 +2,7 @@ import discord
 from discord import *
 import os
 from dotenv import load_dotenv
+from myView import myView
 from configManager import configManager
 
 load_dotenv()
@@ -24,6 +25,10 @@ async def on_message(message):
         return
 
     if message.content == ('!bot'):
-        await message.channel.send(bot.user)
+        # await message.channel.send(bot.user) #? task 4, respond message with discord name
+        
+        #* display myView when user types '!bot'
+        await message.channel.send(view = myView(user=message.author))
+
 
 bot.run(os.getenv('TOKEN'))
