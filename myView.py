@@ -163,7 +163,7 @@ class myView(discord.ui.View):
         self.monster = None
       
       if self.player.experience >= 100:
-        self.player.experience = 0
+        self.player.experience -= 100
         self.player.level += 1
       
       if self.player.level >= 4:
