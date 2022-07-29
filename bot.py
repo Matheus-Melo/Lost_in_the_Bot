@@ -40,7 +40,7 @@ async def on_message(message: discord.Message):
         )
         
         #* display myView when user types '!bot'
-        await message.channel.send(view = myView(user=message.author))
+        await message.channel.send(view = myView(user=message.author, player=player))
 
 
 bot.run(os.getenv('TOKEN'))
